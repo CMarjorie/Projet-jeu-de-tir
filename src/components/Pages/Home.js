@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 export default function Home() {
     return (
         <div>
-            Je suis la page Home
+
+           <h1>Je suis la Homepage</h1> 
             <Link to="/goal">
                 <button type="button">
                    GoalKeeper
@@ -14,7 +15,7 @@ export default function Home() {
                     Sight
                 </button>
             </Link>
-            
+
         </div>
     )
 }
