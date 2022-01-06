@@ -1,8 +1,8 @@
 import './App.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import Home from './components/Home';
-import GoalKeeper from './components/GoalKeeper';
-import Sight from './components/Sight';
+import Home from './components/Pages/Home';
+import GoalKeeper from './components/Pages/GoalKeeper';
+import Sight from './components/Pages/Sight';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Route path='/sight' element={<Sight />} />
       </Routes>
      <div className="App">
-        
+       
       </div>
     </BrowserRouter>
    
