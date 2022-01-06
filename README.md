@@ -1,3 +1,15 @@
+#INIT PROJECT
+
+- npm install  => pour ajouter les node modules
+
+#PROJECT
+
+- Penser à installer le routeur   
+    npm install react-router-dom@6
+- Penser à installer l'api context
+ 
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
