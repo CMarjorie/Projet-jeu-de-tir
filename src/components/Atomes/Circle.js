@@ -1,10 +1,14 @@
+import { useState } from "react";
 
-export default function Circle(){
-
+export default function Circle(props){
+    const [isClicked, setIsClicked] = useState(false);
+    
     return (
         <>
-           <button className="Circle"></button>
-        </>
+            { !isClicked &&
+                <button className="Circle " onClick={(e)=>setIsClicked(true)}></button>
+            }
+           </>
     )
 
 }
