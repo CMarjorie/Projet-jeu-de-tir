@@ -18,7 +18,7 @@ export default function Circle(props){
     return (
         <>
             { !isClicked &&
-                <button className="Circle " onClick={handleClick} style={style} >{level}</button>
+                <button className="Circle " onClick={handleClick} style={style} ></button>
             }
         </>
     )
