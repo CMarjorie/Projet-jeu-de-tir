@@ -15,6 +15,11 @@ export const lifePointsContext = createContext({
   setLifePoints: ()=>{}
 })
 
+export const timerContext = createContext({
+  timer : 0,
+  setTimer: ()=>{},
+})
+
 function App() {
   const [lifePoints, setLifePoints] = useState(5);
 
@@ -41,9 +46,36 @@ function App() {
       let newLifePoints = lifePoints-1;
       setLifePoints(newLifePoints);
   }
+  const [timer, setTimer] = useState(3);
+  const [isTimerOver, setIsTimerOver] = useState(false);
+  
+  const timerInitialStart= {
+    timer: timer,
+    isTimerOver: isTimerOver,
+    setIsTimerOver: setIsTimerOver,
+    setTimer: timerStart
+  }
+
+   function timerStart(){
+    console.log("timer start");
+      let counter = timer;
+      let countDown = setInterval(function(){
+        console.log(counter);
+        counter--;
+        setTimer(counter);
+        if (counter === 0) {
+          setIsTimerOver(true); 
+          clearInterval(countDown);
+
+        }
+      }, 1000);
+      
+    }
+
   return (
     <lifePointsContext.Provider value={lP}>
     <scoreContext.Provider value={scoreBoard}>
+    <timerContext.Provider value={timerInitialStart}>
     <BrowserRouter>
      <div className="App">
       <Routes>
@@ -55,6 +87,7 @@ function App() {
        
       </div>
     </BrowserRouter>
+    </timerContext.Provider>
     </scoreContext.Provider>
     </lifePointsContext.Provider>
   );
