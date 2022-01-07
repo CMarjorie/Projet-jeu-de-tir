@@ -7,12 +7,13 @@ import Sight from './components/Pages/Sight';
 function App() {
   return (
     <BrowserRouter>
+     <div className="App">
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/goal' element={<GoalKeeper />} />
-        <Route path='/sight' element={<Sight />} />
+        <Route path='/sight/:level' element={<Sight />} />
       </Routes>
-     <div className="App">
+    
        
       </div>
     </BrowserRouter>

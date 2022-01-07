@@ -10,12 +10,26 @@ export default function Home() {
                    GoalKeeper
                  </button>
             </Link>
-            <Link to="/sight">
+
+            <h2>Sight</h2>
+            <p>Veuillez choisir votre niveau de difficulté</p>
+            <div>
+            <Link to="/sight/easy">
                 <button type="button">
-                    Sight
+                    Facile
                 </button>
             </Link>
-
+            <Link to="/sight/medium">
+                <button type="button">
+                    Normal
+                </button>
+            </Link>
+            <Link to="/sight/high">
+                <button type="button">
+                    Elevé
+                </button>
+            </Link>
+            </div>
         </div>
     )
 }
