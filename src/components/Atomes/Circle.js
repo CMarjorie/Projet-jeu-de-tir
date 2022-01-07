@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
+import {scoreContext} from "./../../App";
 
 export default function Circle(props){
     const {level} = useParams();
@@ -8,6 +9,7 @@ export default function Circle(props){
         top: "",
         left: ""
     });
+    const setScore = useContext(scoreContext).setScore;
 
     useEffect(() => {
         newStyle();
@@ -39,7 +41,7 @@ export default function Circle(props){
             default:
                 return null;
         }
-        
+        setScore();
     }
 
     function display(){
