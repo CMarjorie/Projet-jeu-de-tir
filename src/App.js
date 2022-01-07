@@ -10,7 +10,18 @@ export const scoreContext = createContext({
   setScore: ()=>{},
 })
 
+export const lifePointsContext = createContext({
+  lifePoints : 0,
+  setLifePoints: ()=>{}
+})
+
 function App() {
+  const [lifePoints, setLifePoints] = useState(5);
+
+  const lP = {
+    lifePoints: lifePoints,
+    setLifePoints : decrementLifePoints
+  }
 
   const [score, setScore] = useState(0);
 
@@ -25,7 +36,13 @@ function App() {
         console.log(newScore);
         setScore(newScore);
     }
+
+    function decrementLifePoints(){
+      let newLifePoints = lifePoints-1;
+      setLifePoints(newLifePoints);
+  }
   return (
+    <lifePointsContext.Provider value={lP}>
     <scoreContext.Provider value={scoreBoard}>
     <BrowserRouter>
      <div className="App">
@@ -39,6 +56,7 @@ function App() {
       </div>
     </BrowserRouter>
     </scoreContext.Provider>
+    </lifePointsContext.Provider>
   );
 }
 
